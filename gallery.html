@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My awesome portfolio - Gallery</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .gallery {
+            background: var(--dark);
+            padding: 6rem 0;
+        }
+        .gallery .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .gallery .section-heading {
+            color: var(--light);
+            text-align: center;
+            margin-bottom: 1rem;
+            line-height: 0.5;
+        }
+        .gallery .section-heading span {
+            color: var(--primary);
+        }
+        .gallery .section-heading + p {
+            color: var(--ternary);
+            font-family: 'Lato', sans-serif;
+            margin-bottom: 3rem;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .gallery .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 2rem;
+            margin-top: 3rem;
+        }
+        .gallery .gallery-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            background: var(--pure);
+            height: 350px;
+        }
+        .gallery .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        .gallery .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+        .gallery .gallery-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery .gallery-card:hover .overlay {
+            opacity: 1;
+        }
+        .gallery .gallery-card .overlay h3 {
+            color: var(--pure);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .gallery .gallery-card:hover .overlay h3 {
+            transform: translateY(0);
+        }
+        .gallery .gallery-card .overlay p {
+            color: var(--ternary);
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease 0.1s;
+        }
+        .gallery .gallery-card:hover .overlay p {
+            transform: translateY(0);
+        }
+        .gallery .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .gallery .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .gallery .filter-btn:hover,
+        .gallery .filter-btn.active {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        @media (max-width: 768px) {
+            .gallery .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-gap: 1.5rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .gallery .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-main-wrapper">
+        <!-- Header included directly -->
+        <header>
+            <div class="container">
+                <nav id="main-nav" class="flex items-center justify-between">
+                    <div class="left flex items-center">
+                        <div class="branding">
+                            <a href="index.html"><img src="./images/logo.svg" alt=""></a>
+                        </div>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="experiences.html">Experiences</a>
+                            <a href="projects.html">Projects</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="blog.html">Blog</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a href="contact.html" class="btn btn-primary">Contact</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <button class="hamberger">
+            <img src="./images/hamberger.svg" alt="">
+        </button>
+        <div class="mobile-nav">
+            <button class="times"><img src="./images/times.svg" alt=""></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <section class="gallery">
+            <div class="container">
+                <h1 class="section-heading">My <span>Gallery</span></h1>
+                <p>A collection of moments from my academic journey, research work, and personal life</p>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="academic">Academic</button>
+                    <button class="filter-btn" data-filter="research">Research</button>
+                    <button class="filter-btn" data-filter="personal">Personal</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-card" data-category="academic">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="University Campus">
+                        <div class="overlay">
+                            <h3>North South University Campus</h3>
+                            <p>Beautiful campus view</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="research">
+                        <img src="https://images.unsplash.com/photo-1532094349887-5431c8f4d0c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Research Lab">
+                        <div class="overlay">
+                            <h3>AI Research Lab</h3>
+                            <p>Working on deep learning projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="academic">
+                        <img src="https://images.unsplash.com/photo-1589571894960-803847c436d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Presentation">
+                        <div class="overlay">
+                            <h3>Conference Presentation</h3>
+                            <p>Presenting research findings</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="personal">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Team Work">
+                        <div class="overlay">
+                            <h3>Team Collaboration</h3>
+                            <p>Working with fellow researchers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="research">
+                        <img src="https://images.unsplash.com/photo-1532619675605-1ede1c5f0799?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Coding Session">
+                        <div class="overlay">
+                            <h3>Coding Session</h3>
+                            <p>Late night programming</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="academic">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Graduation">
+                        <div class="overlay">
+                            <h3>Academic Achievement</h3>
+                            <p>Celebrating success</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="personal">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Travel">
+                        <div class="overlay">
+                            <h3>Conference Travel</h3>
+                            <p>Exploring new places</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="research">
+                        <img src="https://images.unsplash.com/photo-1555949518-71a191d4d69a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Data Visualization">
+                        <div class="overlay">
+                            <h3>Data Visualization</h3>
+                            <p>Analyzing research data</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" data-category="personal">
+                        <img src="https://images.unsplash.com/photo-1517248131206-a5c422e22b7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Coffee Break">
+                        <div class="overlay">
+                            <h3>Coffee Break</h3>
+                            <p>Moments of relaxation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer included directly -->
+        <footer>
+            <div class="footer-logo">
+                <a href="index.html"><img src="./images/logo-2.svg" alt=""></a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/yasin-rahat-6130b5200/"><img src="./images/linkedin.svg" alt=""></a>
+                <a href="https://www.facebook.com/yasin.rahat.39"><img src="./images/facebook.svg" alt=""></a>
+                <a href="https://github.com/yasinarafat03"> <img src="./images/github.svg" alt=""></a>
+                <a href="https://wa.me/+8801875493020"> <img src="./images/whatsapp.svg" alt=""></a>
+                <a href="https://www.instagram.com/yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
+            </div>
+            <div class="copyright">
+                Copyright 2025 © Md Yasin Arafat
+            </div>
+        </footer>
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Filter functionality
+            $('.filter-btn').click(function() {
+                const filterValue = $(this).attr('data-filter');
+                
+                // Update active button
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                // Filter gallery cards
+                if (filterValue === 'all') {
+                    $('.gallery-card').show();
+                } else {
+                    $('.gallery-card').hide();
+                    $(`.gallery-card[data-category="${filterValue}"]`).show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

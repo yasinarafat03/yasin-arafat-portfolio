@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Md Yasin Arafat</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .blog-detail {
+            background: var(--dark);
+            padding: 6rem 0;
+        }
+        .blog-detail .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .blog-detail .blog-header {
+            margin-bottom: 3rem;
+        }
+        .blog-detail .blog-header h1 {
+            color: var(--light);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .blog-detail .blog-header .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--ternary);
+        }
+        .blog-detail .blog-header .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .blog-detail .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .blog-detail .blog-content {
+            color: var(--light);
+            line-height: 1.8;
+        }
+        .blog-detail .blog-content h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .blog-detail .blog-content h3 {
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        .blog-detail .blog-content p {
+            margin-bottom: 1.5rem;
+            color: var(--ternary);
+            font-size: 1.1rem;
+        }
+        .blog-detail .blog-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .blog-detail .blog-content li {
+            margin-bottom: 0.8rem;
+            color: var(--ternary);
+            font-size: 1.1rem;
+        }
+        .blog-detail .blog-content blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--ternary);
+        }
+        .blog-detail .blog-content code {
+            background: rgba(61, 207, 211, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: var(--primary);
+        }
+        .blog-detail .blog-links {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .blog-detail .blog-links a {
+            display: inline-block;
+        }
+        .back-to-blog {
+            margin-top: 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-main-wrapper">
+        <!-- Header included directly -->
+        <header>
+            <div class="container">
+                <nav id="main-nav" class="flex items-center justify-between">
+                    <div class="left flex items-center">
+                        <div class="branding">
+                            <a href="index.html"><img src="./images/logo.svg" alt=""></a>
+                        </div>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="experiences.html">Experiences</a>
+                            <a href="projects.html">Projects</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="blog.html">Blog</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a href="contact.html" class="btn btn-primary">Contact</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <button class="hamberger">
+            <img src="./images/hamberger.svg" alt="">
+        </button>
+        <div class="mobile-nav">
+            <button class="times"><img src="./images/times.svg" alt=""></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <section class="blog-detail">
+            <div class="container">
+                <div class="blog-header">
+                    <h1 id="blog-title">Blog Title</h1>
+                    <div class="blog-meta">
+                        <span id="blog-date">
+                            <img src="./images/calendar.svg" alt="Date">
+                            Date
+                        </span>
+                        <span id="blog-category">
+                            <img src="./images/tag.svg" alt="Category">
+                            Category
+                        </span>
+                    </div>
+                </div>
+                
+                <img id="blog-image" src="" alt="" class="blog-image">
+                
+                <div class="blog-content">
+                    <div id="blog-description">
+                        <!-- Blog content will be inserted here -->
+                    </div>
+                    
+                    <div class="blog-links">
+                        <a href="blog.html" class="btn btn-primary">Back to Blog</a>
+                        <a id="blog-external-link" href="#" target="_blank" class="btn btn-secondary">External Link</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer included directly -->
+        <footer>
+            
+            <a href="index.html"><img class="footer-logo" src="./images/logo.svg" alt=""></a>
+                        
+            
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/yasin-rahat-6130b5200/"><img src="./images/linkedin.svg" alt=""></a>
+                <a href="https://www.facebook.com/yasin.rahat.39"><img src="./images/facebook.svg" alt=""></a>
+                <a href="https://github.com/yasinarafat03"> <img src="./images/github.svg" alt=""></a>
+                <a href="https://wa.me/+8801875493020"> <img src="./images/whatsapp.svg" alt=""></a>
+                <a href="https://www.instagram.com/
+yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
+            </div>
+            <div class="copyright">
+                Copyright 2025 © Md Yasin Arafat
+            </div>
+        </footer>
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        // Get blog ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get('id');
+        
+        // Blog data
+        const blogs = {
+            'quantum-computing': {
+                title: 'The Future of Quantum Computing in Theoretical Computer Science',
+                category: 'Theoretical Computer Science',
+                date: 'October 15, 2023',
+                image: 'https://image.cdn2.seaart.me/2025-01-11/cu0loate878c73asjb80-4/3cad79b8266e89be0780453b95f541f6_high.webp',
+                description: `
+                    <h2>Introduction</h2>
+                    <p>Quantum computing represents one of the most exciting frontiers in theoretical computer science today. Unlike classical computers that use bits (0 or 1), quantum computers use quantum bits or qubits, which can exist in multiple states simultaneously thanks to the principles of superposition and entanglement.</p>
+                    
+                    <h2>Quantum Supremacy</h2>
+                    <p>In 2019, Google claimed to have achieved quantum supremacy with their 53-qubit quantum computer named Sycamore. This milestone demonstrated that a quantum computer could solve a problem in 200 seconds that would take the world's most powerful supercomputer 10,000 years to solve.</p>
+                    
+                    <blockquote>
+                        "Quantum computing is not just about speed; it's about solving problems that are fundamentally intractable for classical computers."
+                    </blockquote>
+                    
+                    <h3>Key Applications in Theoretical Computer Science</h3>
+                    <ul>
+                        <li><strong>Shor's Algorithm:</strong> Can factor large numbers exponentially faster than classical algorithms, threatening current encryption methods</li>
+                        <li><strong>Grover's Algorithm:</strong> Provides quadratic speedup for unstructured search problems</li>
+                        <li><strong>Quantum Simulation:</strong> Simulating quantum systems for drug discovery and materials science</li>
+                    </ul>
+                    
+                    <h2>Challenges and Limitations</h2>
+                    <p>Despite the promise, quantum computing faces significant challenges:</p>
+                    <ul>
+                        <li>Quantum decoherence - qubits lose their quantum properties quickly</li>
+                        <li>Error correction requirements are substantial</li>
+                        <li>Current quantum computers are noisy and have limited qubits</li>
+                    </ul>
+                    
+                    <h2>The Future Outlook</h2>
+                    <p>As quantum computing technology matures, we can expect to see breakthroughs in cryptography, optimization problems, and scientific simulations. Theoretical computer scientists are working on new algorithms and complexity classes that better understand the power and limitations of quantum computation.</p>
+                `,
+                externalLink: '#'
+            },
+            'transformers-nlp': {
+                title: 'Understanding Transformers in Natural Language Processing',
+                category: 'Natural Language Processing',
+                date: 'September 28, 2023',
+                image: 'https://media.licdn.com/dms/image/v2/D4D12AQHMyYljOTQsfQ/article-cover_image-shrink_720_1280/B4DZV9xRz4HwAI-/0/1741571832616?e=1762387200&v=beta&t=xgBCEQxeBOymg6G6Umh4DFYy-odvWC1jHCI5n9dI4LM',
+                description: `
+                    <h2>The Transformer Revolution</h2>
+                    <p>The introduction of the Transformer architecture in the 2017 paper "Attention is All You Need" marked a paradigm shift in natural language processing. Unlike previous sequence-to-sequence models that relied on recurrent or convolutional layers, Transformers use self-attention mechanisms to process input sequences in parallel.</p>
+                    
+                    <h2>Key Components of Transformers</h2>
+                    <h3>Self-Attention Mechanism</h3>
+                    <p>The self-attention mechanism allows the model to weigh the importance of different words in the input sequence when encoding each word. This is computed using queries, keys, and values derived from the input embeddings.</p>
+                    
+                    <h3>Multi-Head Attention</h3>
+                    <p>Instead of performing a single attention function, Transformers use multiple attention heads, allowing the model to jointly attend to information from different representation subspaces at different positions.</p>
+                    
+                    <h2>Applications and Impact</h2>
+                    <p>Transformers have revolutionized numerous NLP tasks:</p>
+                    <ul>
+                        <li><strong>Machine Translation:</strong> Google's Neural Machine Translation system</li>
+                        <li><strong>Text Generation:</strong> GPT series models can generate human-like text</li>
+                        <li><strong>Question Answering:</strong> BERT and its variants excel at understanding context</li>
+                        <li><strong>Text Summarization:</strong> Extractive and abstractive summarization</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "Transformers have become the backbone of modern NLP, enabling models to understand context and relationships in text like never before."
+                    </blockquote>
+                    
+                    <h2>Future Directions</h2>
+                    <p>Research continues to improve Transformer architectures with developments like sparse attention, linear attention, and more efficient training methods. The integration of multimodal inputs (text, images, audio) is another exciting frontier.</p>
+                `,
+                externalLink: '#'
+            },
+            'deep-learning-cv': {
+                title: 'Deep Learning for Computer Vision: A Comprehensive Guide',
+                category: 'Deep Learning',
+                date: 'September 12, 2023',
+                image: 'https://daxg39y63pxwu.cloudfront.net/images/blog/deep-learning-architectures/Deep_Learning_Architecture_Diagram__by_ProjectPro.webp',
+                description: `
+                    <h2>Evolution of Computer Vision</h2>
+                    <p>Computer vision has undergone a dramatic transformation with the advent of deep learning. From traditional hand-crafted feature extractors to end-to-end learned representations, deep neural networks have achieved superhuman performance on many vision tasks.</p>
+                    
+                    <h2>Convolutional Neural Networks (CNNs)</h2>
+                    <p>CNNs are the backbone of modern computer vision. Their architecture is inspired by the visual cortex in animals and consists of:</p>
+                    <ul>
+                        <li><strong>Convolutional Layers:</strong> Apply filters to detect features like edges, textures, and patterns</li>
+                        <li><strong>Pooling Layers:</strong> Reduce spatial dimensions while preserving important features</li>
+                        <li><strong>Fully Connected Layers:</strong> Perform classification based on extracted features</li>
+                    </ul>
+                    
+                    <h2>Key Architectures</h2>
+                    <h3>AlexNet (2012)</h3>
+                    <p>The breakthrough that started the deep learning revolution in computer vision. Won the ImageNet competition with a top-5 error rate of 15.3%, compared to 26.2% for the second-place entry.</p>
+                    
+                    <h3>VGGNet (2014)</h3>
+                    <p>Demonstrated that network depth is crucial for performance, using very small (3×3) convolution filters throughout.</p>
+                    
+                    <h3>ResNet (2015)</h3>
+                    <p>Introduced residual connections that allow training of very deep networks (up to 152 layers) by addressing the vanishing gradient problem.</p>
+                    
+                    <h2>Modern Applications</h2>
+                    <p>Deep learning has enabled breakthroughs in:</p>
+                    <ul>
+                        <li><strong>Image Classification:</strong> Identifying objects in images with high accuracy</li>
+                        <li><strong>Object Detection:</strong> Locating and classifying multiple objects in an image</li>
+                        <li><strong>Semantic Segmentation:</strong> Pixel-level classification of image regions</li>
+                        <li><strong>Face Recognition:</strong> Identifying and verifying individuals from facial images</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "Deep learning has transformed computer vision from a field of academic research to practical applications that impact billions of people daily."
+                    </blockquote>
+                `,
+                externalLink: '#'
+            },
+            'ml-robotics': {
+                title: 'Machine Learning in Robotics: Current Trends and Applications',
+                category: 'Robotics',
+                date: 'August 30, 2023',
+                image: 'https://specials-images.forbesimg.com/imageserve/61d670b81998bdcbce034eac/AI-and-robotics/960x0.jpg?fit=scale',
+                description: `
+                    <h2>The Convergence of ML and Robotics</h2>
+                    <p>The integration of machine learning with robotics is creating a new generation of intelligent systems that can learn from experience and adapt to new environments. This convergence is transforming industries from manufacturing to healthcare.</p>
+                    
+                    <h2>Key ML Techniques in Robotics</h2>
+                    <h3>Supervised Learning for Perception</h3>
+                    <p>Robots use supervised learning to interpret sensor data:</p>
+                    <ul>
+                        <li>Object recognition and classification</li>
+                        <li>Semantic segmentation of scenes</li>
+                        <li>Pose estimation for human-robot interaction</li>
+                    </ul>
+                    
+                    <h3>Reinforcement Learning for Control</h3>
+                    <p>Reinforcement learning enables robots to learn optimal behaviors through trial and error:</p>
+                    <ul>
+                        <li>Learning complex manipulation tasks</li>
+                        <li>Adaptive locomotion in varied terrain</li>
+                        <li>Multi-robot coordination and collaboration</li>
+                    </ul>
+                    
+                    <h2>Real-World Applications</h2>
+                    <h3>Industrial Automation</h3>
+                    <p>ML-powered robots are revolutionizing manufacturing:</p>
+                    <ul>
+                        <li>Predictive maintenance to prevent equipment failures</li>
+                        <li>Quality control through visual inspection</li>
+                        <li>Adaptive assembly lines that reconfigure for different products</li>
+                    </ul>
+                    
+                    <h3>Healthcare Robotics</h3>
+                    <p>In healthcare, ML-enhanced robots assist with:</p>
+                    <ul>
+                        <li>Surgical procedures with sub-millimeter precision</li>
+                        <li>Rehabilitation and physical therapy</li>
+                        <li>Elderly care and assistance</li>
+                    </ul>
+                    
+                    <h3>Autonomous Vehicles</h3>
+                    <p>Self-driving cars represent one of the most complex applications of ML in robotics:</p>
+                    <ul>
+                        <li>Perception systems using deep learning for object detection</li>
+                        <li>Prediction of other road users' behavior</li>
+                        <li>Decision-making in complex traffic scenarios</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "Machine learning is enabling robots to move beyond pre-programmed behaviors to truly adaptive and intelligent systems."
+                    </blockquote>
+                `,
+                externalLink: '#'
+            },
+            'reinforcement-learning': {
+                title: 'Recent Advances in Reinforcement Learning',
+                category: 'Machine Learning',
+                date: 'August 15, 2023',
+                image: 'https://www.slideteam.net/media/catalog/product/cache/1280x720/h/o/how_reinforcement_learning_works_agent_ppt_powerpoint_presentation_slides_slide01.jpg',
+                description: `
+                    <h2>Reinforcement Learning: From Theory to Practice</h2>
+                    <p>Reinforcement Learning (RL) has evolved from a theoretical framework to a practical tool for solving complex decision-making problems. Recent advances have pushed the boundaries of what's possible with RL.</p>
+                    
+                    <h2>Deep Reinforcement Learning</h2>
+                    <p>The combination of deep learning with reinforcement learning has led to breakthroughs in:</p>
+                    <ul>
+                        <li><strong>Deep Q-Networks (DQN):</strong> Combines Q-learning with deep neural networks to handle high-dimensional state spaces</li>
+                        <li><strong>Policy Gradient Methods:</strong> Directly optimize the policy function, including REINFORCE and Actor-Critic methods</li>
+                        <li><strong>Model-Based RL:</strong> Learn a model of the environment to improve sample efficiency</li>
+                    </ul>
+                    
+                    <h2>Recent Breakthroughs</h2>
+                    <h3>AlphaGo and AlphaZero</h3>
+                    <p>DeepMind's AlphaGo defeated world champion Lee Sedol in Go, a game previously thought to be too complex for AI. AlphaZero generalized this approach to chess and shogi, achieving superhuman performance through self-play alone.</p>
+                    
+                    <h3>OpenAI Five</h3>
+                    <p>Demonstrated that RL agents can master complex multiplayer games like Dota 2, requiring long-term planning and teamwork in a partially observable environment.</p>
+                    
+                    <h3>Robotics Applications</h3>
+                    <p>RL is enabling robots to learn complex manipulation skills:</p>
+                    <ul>
+                        <li>Dexterity: Solving Rubik's cube with a robotic hand</li>
+                        <li>Locomotion: Learning to walk and run in simulation and real world</li>
+                        <li>Assembly: Learning to assemble objects from visual demonstrations</li>
+                    </ul>
+                    
+                    <h2>Challenges and Future Directions</h2>
+                    <p>Despite successes, RL faces significant challenges:</p>
+                    <ul>
+                        <li><strong>Sample Efficiency:</strong> RL typically requires millions of interactions to learn</li>
+                        <li><strong>Generalization:</strong> Policies often don't transfer well to new environments</li>
+                        <li><strong>Safety:</strong> Ensuring safe exploration in real-world applications</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "Reinforcement learning is teaching us not just how to build better AI, but also how intelligence itself might emerge through interaction with the world."
+                    </blockquote>
+                `,
+                externalLink: '#'
+            },
+            'nlp-ai-systems': {
+                title: 'The Role of NLP in Modern AI Systems',
+                category: 'Natural Language Processing',
+                date: 'July 28, 2023',
+                image: 'https://f5b623aa.delivery.rocketcdn.me/wp-content/uploads/2022/10/Benefits-of-NLP-760px.jpg',
+                description: `
+                    <h2>NLP: The Interface Between Humans and AI</h2>
+                    <p>Natural Language Processing has become the cornerstone of human-AI interaction. From simple chatbots to sophisticated language models, NLP enables machines to understand, interpret, and generate human language.</p>
+                    
+                    <h2>Evolution of NLP</h2>
+                    <h3>Rule-Based Systems</h3>
+                    <p>Early NLP systems relied on hand-crafted rules and linguistic knowledge. While effective for specific domains, they lacked flexibility and scalability.</p>
+                    
+                    <h3>Statistical Methods</h3>
+                    <p>The introduction of statistical methods brought data-driven approaches to NLP, with models learning patterns from large corpora of text.</p>
+                    
+                    <h3>Deep Learning Revolution</h3>
+                    <p>The advent of deep learning, particularly word embeddings and later Transformers, has transformed NLP capabilities, enabling systems to capture nuanced semantic relationships.</p>
+                    
+                    <h2>Key Applications in Modern AI</h2>
+                    <h3>Virtual Assistants</h3>
+                    <p>Systems like Siri, Alexa, and Google Assistant rely heavily on NLP for:</p>
+                    <ul>
+                        <li>Speech recognition and understanding</li>
+                        <li>Intent classification and entity extraction</li>
+                        <li>Context-aware response generation</li>
+                    </ul>
+                    
+                    <h3>Content Generation</h3>
+                    <p>Large language models like GPT-3 and GPT-4 can:</p>
+                    <ul>
+                        <li>Generate human-like text on any topic</li>
+                        <li>Summarize long documents</li>
+                        <li>Translate between languages with high accuracy</li>
+                        <li>Write code in multiple programming languages</li>
+                    </ul>
+                    
+                    <h3>Sentiment Analysis</h3>
+                    <p>NLP enables businesses to understand customer sentiment through:</p>
+                    <ul>
+                        <li>Analyzing social media posts and reviews</li>
+                        <li>Monitoring brand reputation in real-time</li>
+                        <li>Identifying emerging trends and concerns</li>
+                    </ul>
+                    
+                    <h2>Challenges and Ethical Considerations</h2>
+                    <p>As NLP systems become more powerful, they raise important questions:</p>
+                    <ul>
+                        <li><strong>Bias and Fairness:</strong> Models can inherit and amplify biases from training data</li>
+                        <li><strong>Misinformation:</strong> The ability to generate convincing fake text</li>
+                        <li><strong>Privacy:</strong> Handling sensitive personal information in text</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "NLP is not just about teaching computers to understand language; it's about creating systems that can truly communicate and collaborate with humans."
+                    </blockquote>
+                `,
+                externalLink: '#'
+            }
+        };
+        
+        // Load blog data
+        if (blogId && blogs[blogId]) {
+            const blog = blogs[blogId];
+            
+            document.getElementById('blog-title').textContent = blog.title;
+            document.getElementById('blog-category').innerHTML = `<img src="./images/tag.svg" alt="Category"> ${blog.category}`;
+            document.getElementById('blog-date').innerHTML = `<img src="./images/calendar.svg" alt="Date"> ${blog.date}`;
+            document.getElementById('blog-image').src = blog.image;
+            document.getElementById('blog-image').alt = blog.title;
+            document.getElementById('blog-description').innerHTML = blog.description;
+            
+            const externalLink = document.getElementById('blog-external-link');
+            
+            if (blog.externalLink && blog.externalLink !== '#') {
+                externalLink.href = blog.externalLink;
+            } else {
+                externalLink.style.display = 'none';
+            }
+        } else {
+            // Blog not found
+            document.getElementById('blog-title').textContent = 'Blog Post Not Found';
+            document.getElementById('blog-description').innerHTML = '<p>Sorry, the requested blog post could not be found.</p>';
+            document.getElementById('blog-image').style.display = 'none';
+            document.getElementById('blog-external-link').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

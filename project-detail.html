@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Md Yasin Arafat</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .project-detail {
+            background: var(--dark);
+            padding: 6rem 0;
+        }
+        .project-detail .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-detail .project-header {
+            margin-bottom: 3rem;
+        }
+        .project-detail .project-header h1 {
+            color: var(--light);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-detail .project-header .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .project-detail .project-header .project-meta span {
+            background: var(--primary);
+            color: var(--pure);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .project-detail .project-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .project-detail .project-content {
+            color: var(--light);
+            line-height: 1.8;
+        }
+        .project-detail .project-content h2 {
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .project-detail .project-content p {
+            margin-bottom: 1.5rem;
+            color: var(--ternary);
+        }
+        .project-detail .project-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .project-detail .project-content li {
+            margin-bottom: 0.5rem;
+            color: var(--ternary);
+        }
+        .project-detail .project-links {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .project-detail .project-links a {
+            display: inline-block;
+        }
+        .back-to-projects {
+            margin-top: 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-main-wrapper">
+        <button class="hamberger">
+            <img src="./images/hamberger.svg" alt="">
+        </button>
+        <div class="mobile-nav">
+            <button class="times"><img src="./images/times.svg" alt=""></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experiences">Experiences</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+            </ul>
+        </div>
+        
+        <header>
+            <div class="container">
+                <nav id="main-nav" class="flex items-center justify-between">
+                    <div class="left flex items-center">
+                        <div class="branding">
+                            <img src="./images/logo.svg" alt="">
+                        </div>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html#about">About</a>
+                            <a href="index.html#experiences">Experiences</a>
+                            <a href="index.html#projects">Projects</a>
+                            <a href="index.html#gallery">Gallery</a>
+                            <a href="index.html#blog">Blog</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="btn btn-primary">Contact</button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        <section class="project-detail">
+            <div class="container">
+                <div class="project-header">
+                    <h1 id="project-title">Project Title</h1>
+                    <div class="project-meta">
+                        <span id="project-category">Category</span>
+                        <span id="project-tech">Technologies</span>
+                        <span id="project-date">Date</span>
+                    </div>
+                </div>
+                
+                <img id="project-image" src="" alt="" class="project-image">
+                
+                <div class="project-content">
+                    <div id="project-description">
+                        <!-- Project description will be inserted here -->
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="index.html#projects" class="btn btn-primary">Back to Projects</a>
+                        <a id="project-demo-link" href="#" target="_blank" class="btn btn-secondary">View Demo</a>
+                        <a id="project-code-link" href="#" target="_blank" class="btn btn-secondary">View Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            
+            <a href="index.html"><img class="footer-logo" src="./images/logo.svg" alt=""></a>
+                        
+            
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/yasin-rahat-6130b5200/"><img src="./images/linkedin.svg" alt=""></a>
+                <a href="https://www.facebook.com/yasin.rahat.39"><img src="./images/facebook.svg" alt=""></a>
+                <a href="https://github.com/yasinarafat03"> <img src="./images/github.svg" alt=""></a>
+                <a href="https://wa.me/+8801875493020"> <img src="./images/whatsapp.svg" alt=""></a>
+                <a href="https://www.instagram.com/yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
+            </div>
+            <div class="copyright">
+                Copyright 2025 © Md Yasin Arafat
+            </div>
+        </footer>
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        // Get project ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        
+        // Project data
+        const projects = {
+            'alu': {
+                title: '8-bit ALU with ALU Control Unit',
+                category: 'Hardware Project',
+                tech: 'Computer Architecture',
+                date: '2023',
+                image: './images/alu.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>This project involved designing and implementing a functional 8-bit Arithmetic Logic Unit (ALU) with an integrated ALU Control Unit. The ALU is a fundamental component in computer processors that performs arithmetic and logic operations.</p>
+                    
+                    <h2>Technical Details</h2>
+                    <p>The ALU was designed to perform the following operations:</p>
+                    <ul>
+                        <li>Arithmetic operations: Addition, Subtraction, Increment, Decrement</li>
+                        <li>Logic operations: AND, OR, XOR, NOT</li>
+                        <li>Comparison operations: Equal, Not Equal</li>
+                    </ul>
+                    
+                    <h2>Implementation</h2>
+                    <p>The project was implemented using logic gates and multiplexers on a breadboard. The ALU Control Unit was designed to decode operation codes and select the appropriate operation to be performed.</p>
+                    
+                    <h2>Challenges and Solutions</h2>
+                    <p>One of the main challenges was managing the complexity of the control unit. This was addressed by breaking down the control logic into smaller, manageable components and using a systematic approach to design and testing.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'cpush': {
+                title: 'CPUSH - CPU Scheduling Simulator',
+                category: 'Mobile App',
+                tech: 'Operating Systems',
+                date: '2023',
+                image: './images/cpu.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>CPUSH is a mobile application designed to simulate CPU scheduling algorithms and deadlock detection in operating systems. This educational tool helps students visualize and understand these complex concepts.</p>
+                    
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Simulation of various CPU scheduling algorithms (FCFS, SJF, Priority, Round Robin)</li>
+                        <li>Interactive process creation and parameter adjustment</li>
+                        <li>Real-time visualization of process execution</li>
+                        <li>Deadlock detection and prevention strategies</li>
+                        <li>Performance metrics calculation and comparison</li>
+                    </ul>
+                    
+                    <h2>Technical Implementation</h2>
+                    <p>The application was developed using React Native for cross-platform compatibility. The backend logic for scheduling algorithms was implemented in JavaScript, with a focus on efficiency and accuracy.</p>
+                    
+                    <h2>Educational Impact</h2>
+                    <p>This project has been used as a teaching aid in operating systems courses, helping students better understand abstract concepts through interactive visualization.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'ecommerce': {
+                title: 'E-commerce Website for Technology Products',
+                category: 'Web Development',
+                tech: 'Full Stack',
+                date: '2022',
+                image: './images/e-commerce.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>A comprehensive e-commerce platform specifically designed for technology products. This project showcases full-stack web development capabilities with a focus on user experience and performance.</p>
+                    
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>User authentication and authorization</li>
+                        <li>Product catalog with advanced filtering and search</li>
+                        <li>Shopping cart and checkout process</li>
+                        <li>Order tracking and history</li>
+                        <li>Admin dashboard for product and order management</li>
+                        <li>Payment gateway integration</li>
+                    </ul>
+                    
+                    <h2>Technical Stack</h2>
+                    <p>The frontend was built using React.js with Redux for state management. The backend was developed using Node.js with Express.js and MongoDB as the database. The application follows RESTful architecture principles.</p>
+                    
+                    <h2>Security Considerations</h2>
+                    <p>Security was a top priority, with implementation of JWT for authentication, input validation, protection against SQL injection, and secure payment processing.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'attendance': {
+                title: 'Online Attendance Taking System',
+                category: 'Web Application',
+                tech: 'Database Systems',
+                date: '2022',
+                image: './images/attendence.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>A web-based system designed to streamline and automate the process of taking attendance in educational institutions. This system replaces traditional paper-based methods with a digital solution that offers efficiency and accuracy.</p>
+                    
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Role-based access for students, teachers, and administrators</li>
+                        <li>QR code-based attendance verification</li>
+                        <li>Automated attendance reports and statistics</li>
+                        <li>Notification system for attendance alerts</li>
+                        <li>Integration with academic calendars</li>
+                    </ul>
+                    
+                    <h2>Technical Implementation</h2>
+                    <p>The system was developed using the MERN stack (MongoDB, Express.js, React.js, Node.js). The database was designed to efficiently store and retrieve attendance records while maintaining data integrity.</p>
+                    
+                    <h2>Impact</h2>
+                    <p>This system significantly reduced the time required for attendance management and provided valuable insights into student attendance patterns, helping institutions improve their educational processes.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'surveillance': {
+                title: 'Online Class Surveillance System',
+                category: 'Web Application',
+                tech: 'Security',
+                date: '2021',
+                image: './images/survialence.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>A system designed to monitor and ensure the integrity of online classes. This project addresses the challenges of maintaining academic honesty and engagement in virtual learning environments.</p>
+                    
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>Real-time monitoring of multiple students</li>
+                        <li>Behavior analysis to detect suspicious activities</li>
+                        <li>Automated alerts for instructors</li>
+                        <li>Session recording for review purposes</li>
+                        <li>Privacy-preserving design principles</li>
+                    </ul>
+                    
+                    <h2>Technical Approach</h2>
+                    <p>The system uses computer vision algorithms to analyze video feeds from students' webcams. Machine learning models were trained to detect behaviors that might indicate academic dishonesty or disengagement.</p>
+                    
+                    <h2>Ethical Considerations</h2>
+                    <p>The project was developed with careful consideration of privacy concerns. All data processing is done locally when possible, and students are informed about the monitoring practices.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'seven-segment': {
+                title: 'Seven Segment Display with Sequential Circuit',
+                category: 'Hardware Project',
+                tech: 'Digital Logic',
+                date: '2021',
+                image: './images/seven.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>This project involved designing and implementing a seven-segment display system controlled by sequential circuits. The system demonstrates fundamental concepts in digital logic design and sequential circuit implementation.</p>
+                    
+                    <h2>Technical Details</h2>
+                    <p>The project consists of:</p>
+                    <ul>
+                        <li>Sequential circuit design using flip-flops</li>
+                        <li>Combinational logic for segment control</li>
+                        <li>Counter implementation for digit sequencing</li>
+                        <li>Timing and synchronization considerations</li>
+                    </ul>
+                    
+                    <h2>Implementation Process</h2>
+                    <p>The circuit was designed using logic gates and flip-flops, then implemented on a breadboard. The design process included creating truth tables, Karnaugh maps for optimization, and timing diagrams for verification.</p>
+                    
+                    <h2>Learning Outcomes</h2>
+                    <p>This project provided hands-on experience with digital logic design, sequential circuits, and the practical challenges of hardware implementation.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'smoke-detector': {
+                title: 'Smoke Detector',
+                category: 'IoT Project',
+                tech: 'Embedded Systems',
+                date: '2020',
+                image: './images/smoke.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>An IoT-based smoke detection system designed for enhanced safety and real-time monitoring. This project demonstrates the application of embedded systems and IoT technology in creating practical safety solutions.</p>
+                    
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Real-time smoke detection using MQ-2 sensor</li>
+                        <li>Wireless alerts via Wi-Fi connection</li>
+                        <li>Battery backup for continuous operation</li>
+                        <li>Mobile app integration for remote monitoring</li>
+                        <li>Data logging for incident analysis</li>
+                    </ul>
+                    
+                    <h2>Technical Implementation</h2>
+                    <p>The system uses an ESP32 microcontroller for processing and connectivity. The smoke sensor data is processed locally, with alerts sent to a cloud server and mobile application when thresholds are exceeded.</p>
+                    
+                    <h2>Future Enhancements</h2>
+                    <p>Planned improvements include integration with smart home systems, machine learning for false alarm reduction, and expansion to detect other hazardous gases.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            }
+        };
+        
+        // Load project data
+        if (projectId && projects[projectId]) {
+            const project = projects[projectId];
+            
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-category').textContent = project.category;
+            document.getElementById('project-tech').textContent = project.tech;
+            document.getElementById('project-date').textContent = project.date;
+            document.getElementById('project-image').src = project.image;
+            document.getElementById('project-image').alt = project.title;
+            document.getElementById('project-description').innerHTML = project.description;
+            
+            const demoLink = document.getElementById('project-demo-link');
+            const codeLink = document.getElementById('project-code-link');
+            
+            if (project.demoLink && project.demoLink !== '#') {
+                demoLink.href = project.demoLink;
+            } else {
+                demoLink.style.display = 'none';
+            }
+            
+            if (project.codeLink && project.codeLink !== '#') {
+                codeLink.href = project.codeLink;
+            } else {
+                codeLink.style.display = 'none';
+            }
+        } else {
+            // Project not found
+            document.getElementById('project-title').textContent = 'Project Not Found';
+            document.getElementById('project-description').innerHTML = '<p>Sorry, the requested project could not be found.</p>';
+            document.getElementById('project-image').style.display = 'none';
+            document.getElementById('project-demo-link').style.display = 'none';
+            document.getElementById('project-code-link').style.display = 'none';
+        }
+    </script>
+    
+</body>
+</html>
