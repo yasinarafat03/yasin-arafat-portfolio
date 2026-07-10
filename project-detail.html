@@ -86,6 +86,23 @@
         }
     </style>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const revealEls = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+});
+</script>
+
 <body>
     <div class="site-main-wrapper">
         <button class="hamberger">
@@ -181,6 +198,40 @@
         
         // Project data
         const projects = {
+            'ai-agent': {
+                title: 'Offline Multimodal AI Agent for Autonomous Personal Assistance',
+                category: 'AI & Automation',
+                tech: 'Machine Learning',
+                date: '2025',
+                image: './images/ai-agent.png',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>Developed a fully offline, privacy-preserving multimodal AI agent capable of autonomous decision-making using locally deployed multimodal Large Language Models (LLMs). The entire system operates completely on-device without relying on any external cloud services, guaranteeing user privacy and low-latency task execution.</p>
+                    
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li><strong>Offline Multimodal Intelligence:</strong> Local deployment of LLMs/VLMs for on-device reasoning across text, image, and voice modalities.</li>
+                        <li><strong>Autonomous Email Assistant:</strong> Monitors the local client to classify critical emails, generate summaries, and trigger automatic responses or workflows.</li>
+                        <li><strong>Email-to-Telegram Automation:</strong> Scans incoming messages for specific senders or keywords, compiles smart summaries, and forwards them alongside attachments directly to Telegram.</li>
+                        <li><strong>Intelligent Gallery & Vision Monitoring:</strong> Integrates facial recognition and YOLO-based object detection to automatically identify targets and share matched media with selected contacts.</li>
+                        <li><strong>Geofencing-based Automation:</strong> Implements location-aware context triggers to execute automated routines (e.g., family arrival notifications, workplace modes).</li>
+                        <li><strong>Natural Language Planning & Voice:</strong> Allows users to configure automation rules through natural language (e.g., <em>"If I receive an email from my supervisor and I'm outside campus, send me a Telegram notification"</em>) and offline voice command recognition.</li>
+                    </ul>
+                    
+                    <h2>Core Technologies</h2>
+                    <ul>
+                        <li><strong>Multimodal Reasoning:</strong> Llama 3, Qwen2.5-VL, Phi-4</li>
+                        <li><strong>Computer Vision:</strong> YOLO (Object Detection), Face Recognition, Vision-Language Models (VLMs)</li>
+                        <li><strong>System Integration:</strong> Local Vector Databases, Telegram Bot API, Custom Agent Planning Frameworks</li>
+                        <li><strong>Hardware Acceleration:</strong> On-device GPU/NPU acceleration for real-time model inference</li>
+                    </ul>
+                    
+                    <h2>Novelty & Impact</h2>
+                    <p>Unlike conventional cloud-based smart assistants, this system combines vision, natural language understanding, location tracking, and action-planning into a single, fully offline agentic pipeline. It serves as a blueprint for secure, private, next-generation personal computing where user data never leaves the host machine.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
             'alu': {
                 title: '8-bit ALU with ALU Control Unit',
                 category: 'Hardware Project',

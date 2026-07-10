@@ -15,6 +15,23 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const revealEls = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+});
+</script>
+
 <body>
     <div class="site-main-wrapper">
         <!-- Header included directly -->
@@ -57,7 +74,7 @@
             </ul>
         </div>
         
-        <section id="blog" class="blog">
+        <section id="blog" class="blog reveal">
             <div class="container">
                 <h1 class="section-heading"><span>My</span> Blog</h1>
                 <p>Exploring the frontiers of computer science and artificial intelligence</p>
@@ -70,20 +87,20 @@
                             <a href="blog-detail.html?id=quantum-computing">
                                 <h1>The Future of Quantum Computing in Theoretical Computer Science</h1>
                             </a>
-                            <span>October 15, 2023</span>
+                            <span>May 12, 2026</span>
                             <p>Exploring how quantum computing is revolutionizing theoretical computer science and solving problems previously considered intractable for classical computers.</p>
                             <a href="blog-detail.html?id=quantum-computing">Read More</a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="img-wrapper">
-                            <img src="https://media.licdn.com/dms/image/v2/D4D12AQHMyYljOTQsfQ/article-cover_image-shrink_720_1280/B4DZV9xRz4HwAI-/0/1741571832616?e=1762387200&v=beta&t=xgBCEQxeBOymg6G6Umh4DFYy-odvWC1jHCI5n9dI4LM" alt="Transformers">
+                            <img src="./images/transformers.png" alt="Transformers">
                         </div>
                         <div class="card-content">
                             <a href="blog-detail.html?id=transformers-nlp">
                                 <h1>Understanding Transformers in Natural Language Processing</h1>
                             </a>
-                            <span>September 28, 2023</span>
+                            <span>April 28, 2026</span>
                             <p>A deep dive into transformer architecture and how it has revolutionized natural language processing tasks, from translation to text generation.</p>
                             <a href="blog-detail.html?id=transformers-nlp">Read More</a>
                         </div>
@@ -96,7 +113,7 @@
                             <a href="blog-detail.html?id=deep-learning-cv">
                                 <h1>Deep Learning for Computer Vision: A Comprehensive Guide</h1>
                             </a>
-                            <span>September 12, 2023</span>
+                            <span>March 15, 2026</span>
                             <p>Exploring convolutional neural networks and their applications in computer vision, from image classification to object detection and segmentation.</p>
                             <a href="blog-detail.html?id=deep-learning-cv">Read More</a>
                         </div>
@@ -109,7 +126,7 @@
                             <a href="blog-detail.html?id=ml-robotics">
                                 <h1>Machine Learning in Robotics: Current Trends and Applications</h1>
                             </a>
-                            <span>August 30, 2023</span>
+                            <span>February 20, 2026</span>
                             <p>How machine learning is transforming robotics, enabling robots to learn from experience and adapt to new environments and tasks.</p>
                             <a href="blog-detail.html?id=ml-robotics">Read More</a>
                         </div>
@@ -122,20 +139,20 @@
                             <a href="blog-detail.html?id=reinforcement-learning">
                                 <h1>Recent Advances in Reinforcement Learning</h1>
                             </a>
-                            <span>August 15, 2023</span>
+                            <span>January 10, 2026</span>
                             <p>Exploring the latest developments in reinforcement learning, from deep Q-networks to policy gradients and their real-world applications.</p>
                             <a href="blog-detail.html?id=reinforcement-learning">Read More</a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="img-wrapper">
-                            <img src="https://f5b623aa.delivery.rocketcdn.me/wp-content/uploads/2022/10/Benefits-of-NLP-760px.jpg" alt="NLP">
+                            <img src="./images/nlp-role.png" alt="NLP">
                         </div>
                         <div class="card-content">
                             <a href="blog-detail.html?id=nlp-ai-systems">
                                 <h1>The Role of NLP in Modern AI Systems</h1>
                             </a>
-                            <span>July 28, 2023</span>
+                            <span>December 18, 2025</span>
                             <p>Examining how natural language processing is becoming an integral part of modern AI systems, from virtual assistants to automated content generation.</p>
                             <a href="blog-detail.html?id=nlp-ai-systems">Read More</a>
                         </div>

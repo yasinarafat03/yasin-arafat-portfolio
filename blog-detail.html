@@ -109,6 +109,23 @@
         }
     </style>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const revealEls = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+});
+</script>
+
 <body>
     <div class="site-main-wrapper">
         <!-- Header included directly -->
@@ -216,7 +233,7 @@ yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             'quantum-computing': {
                 title: 'The Future of Quantum Computing in Theoretical Computer Science',
                 category: 'Theoretical Computer Science',
-                date: 'October 15, 2023',
+                date: 'May 12, 2026',
                 image: 'https://image.cdn2.seaart.me/2025-01-11/cu0loate878c73asjb80-4/3cad79b8266e89be0780453b95f541f6_high.webp',
                 description: `
                     <h2>Introduction</h2>
@@ -252,8 +269,8 @@ yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             'transformers-nlp': {
                 title: 'Understanding Transformers in Natural Language Processing',
                 category: 'Natural Language Processing',
-                date: 'September 28, 2023',
-                image: 'https://media.licdn.com/dms/image/v2/D4D12AQHMyYljOTQsfQ/article-cover_image-shrink_720_1280/B4DZV9xRz4HwAI-/0/1741571832616?e=1762387200&v=beta&t=xgBCEQxeBOymg6G6Umh4DFYy-odvWC1jHCI5n9dI4LM',
+                date: 'April 28, 2026',
+                image: './images/transformers.png',
                 description: `
                     <h2>The Transformer Revolution</h2>
                     <p>The introduction of the Transformer architecture in the 2017 paper "Attention is All You Need" marked a paradigm shift in natural language processing. Unlike previous sequence-to-sequence models that relied on recurrent or convolutional layers, Transformers use self-attention mechanisms to process input sequences in parallel.</p>
@@ -286,7 +303,7 @@ yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             'deep-learning-cv': {
                 title: 'Deep Learning for Computer Vision: A Comprehensive Guide',
                 category: 'Deep Learning',
-                date: 'September 12, 2023',
+                date: 'March 15, 2026',
                 image: 'https://daxg39y63pxwu.cloudfront.net/images/blog/deep-learning-architectures/Deep_Learning_Architecture_Diagram__by_ProjectPro.webp',
                 description: `
                     <h2>Evolution of Computer Vision</h2>
@@ -328,7 +345,7 @@ yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             'ml-robotics': {
                 title: 'Machine Learning in Robotics: Current Trends and Applications',
                 category: 'Robotics',
-                date: 'August 30, 2023',
+                date: 'February 20, 2026',
                 image: 'https://specials-images.forbesimg.com/imageserve/61d670b81998bdcbce034eac/AI-and-robotics/960x0.jpg?fit=scale',
                 description: `
                     <h2>The Convergence of ML and Robotics</h2>
@@ -385,7 +402,7 @@ yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             'reinforcement-learning': {
                 title: 'Recent Advances in Reinforcement Learning',
                 category: 'Machine Learning',
-                date: 'August 15, 2023',
+                date: 'January 10, 2026',
                 image: 'https://www.slideteam.net/media/catalog/product/cache/1280x720/h/o/how_reinforcement_learning_works_agent_ppt_powerpoint_presentation_slides_slide01.jpg',
                 description: `
                     <h2>Reinforcement Learning: From Theory to Practice</h2>
@@ -431,8 +448,8 @@ yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             'nlp-ai-systems': {
                 title: 'The Role of NLP in Modern AI Systems',
                 category: 'Natural Language Processing',
-                date: 'July 28, 2023',
-                image: 'https://f5b623aa.delivery.rocketcdn.me/wp-content/uploads/2022/10/Benefits-of-NLP-760px.jpg',
+                date: 'December 18, 2025',
+                image: './images/nlp-role.png',
                 description: `
                     <h2>NLP: The Interface Between Humans and AI</h2>
                     <p>Natural Language Processing has become the cornerstone of human-AI interaction. From simple chatbots to sophisticated language models, NLP enables machines to understand, interpret, and generate human language.</p>

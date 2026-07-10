@@ -1,20 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Md Yasin Arafat</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="icon" type="image/png" href="./images/favicon.png">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Tabs Container styling */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 3rem auto 4rem;
+            max-width: 950px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: var(--ternary);
+            border: none;
+            padding: 10px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            background: rgba(61, 207, 211, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: var(--dark);
+            box-shadow: 0 4px 20px rgba(61, 207, 211, 0.3);
+        }
+
+        /* Tab section transition styling */
+        .tab-section {
+            display: none;
+            opacity: 0;
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tab-section.active {
+            display: block;
+            animation: fadeInSlide 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Adjust section spacing when inside tab sections */
+        .tab-section h1.section-heading {
+            margin-top: 0 !important;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .tabs-container {
+                border-radius: 20px;
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+                padding: 8px 16px;
+            }
+        }
+    </style>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const revealEls = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealEls.forEach(el => observer.observe(el));
+    });
+
+    function switchTab(event, tabId) {
+        if (event) event.preventDefault();
+
+        // Hide all tab sections
+        const sections = document.querySelectorAll('.tab-section');
+        sections.forEach(sec => {
+            sec.classList.remove('active');
+        });
+
+        // Deactivate all tab buttons
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Show selected section
+        const targetSection = document.getElementById(tabId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        // Activate selected button
+        if (event && event.currentTarget) {
+            event.currentTarget.classList.add('active');
+        }
+    }
+</script>
+
 <body>
     <div class="site-main-wrapper">
         <!-- Header included directly -->
@@ -56,81 +186,271 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
-        
-        <section id="experiences" class="experiences">
+
+        <section id="experiences" class="experiences reveal">
             <div class="container">
-                <h1 class="section-heading"><span>Research</span> Experiences</h1>
-                <div class="experience-wrapper">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <h3>DownLens Research Project</h3>
-                            <span class="duration">April 2025 - Present</span>
+                <!-- Tabs Navigation -->
+                <div class="tabs-container">
+                    <button class="tab-btn active" onclick="switchTab(event, 'sec-research')">Research
+                        Experiences</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'sec-publications')">Publications</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'sec-teaching')">Teaching Experience</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'sec-profdev')">Professional Development</button>
+                </div>
+
+                <!-- NEW SECTION: PUBLICATIONS -->
+                <div id="sec-publications" class="tab-section">
+                    <h1 class="section-heading"><span>Research</span> Publications</h1>
+                    <div class="experience-wrapper">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Multimodal Fusion of Stroke Biomarkers</h3>
+                                <span class="duration">Published (2026)</span>
+                            </div>
+                            <p style="color: var(--darkgray); line-height: 1.8;">
+                                Alif, S. S., <strong>Arafat, M. Y.</strong>, Nibir, M. M. I., Tusti, F. M., & Zereen, A.
+                                N.
+                                (2026).
+                                <em>Multimodal fusion of visual and auditory biomarkers: An epoch-wise stochastic
+                                    modality
+                                    masking framework for stroke detection using a CNN--GRU network</em>.
+                                <strong>Array</strong>, 30, 100787. (Elsevier; IF: 5.3, SJR Q1).
+                            </p>
+                            <div style="margin-top: 10px;">
+                                <a href="https://doi.org/10.1016/j.array.2026.100787" target="_blank"
+                                    style="color: var(--primary); text-decoration: none; font-weight: 600;">DOI:
+                                    10.1016/j.array.2026.100787</a>
+                            </div>
                         </div>
-                        <p>Leading ongoing research project: DownLens: A Novel Approach with FL Based Optimized Deep Edge Intelligence to Detect Early Age Down Syndrome. Led a deep learning research project focused on sequential knowledge distillation and quantization optimization for detecting Down syndrome in children using facial images. Submitted to a Q1 journal.</p>
-                        <div class="institution">
-                            <strong>North South University</strong>
-                            <p>Research Assistant - Mr. Md. Ishan Arefin Hossain (IAH)</p>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Review on Foundation Models for Medical Time Series</h3>
+                                <span class="duration">Under Review</span>
+                            </div>
+                            <p style="color: var(--darkgray); line-height: 1.8;">
+                                Hassanuzzaman, M., <strong>Arafat, M. Y.</strong>, Choudhary, T., ... & Kamaleswaran, R.
+                                <em>Review on Foundation Models for Medical Time Series: Trends, Advances, Challenges,
+                                    and
+                                    Future Directions</em>.
+                                Under review at <strong>Artificial Intelligence Review</strong> (Springer; IF: 18.8,
+                                2025).
+                                Supported by NIH Grant GM139967.
+                            </p>
                         </div>
                     </div>
-                    
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <h3>Stroke Multimodal Research</h3>
-                            <span class="duration">August 2024 - Present</span>
+                </div>
+
+                <!-- RESEARCH EXPERIENCES SECTION -->
+                <div id="sec-research" class="tab-section active">
+                    <h1 class="section-heading"><span>Research</span> Experiences</h1>
+                    <div class="experience-wrapper">
+                        <!-- NIRO Lab -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Embodied AI & Perception (NIRO Lab)</h3>
+                                <span class="duration">Feb 2026 - Present</span>
+                            </div>
+                            <p>Contributing to BIT (Butler Intelligent Toolkit), an embodied assistive system. Key
+                                contributions include:</p>
+                            <ul style="padding-left: 1.2rem; line-height: 1.6; margin: 10px 0; color: var(--darkgray);">
+                                <li>Integrating Large Language Models (LLMs), Vision-Language Models (VLMs), and
+                                    Vision-Language-Action (VLA) models for autonomous decision-making.</li>
+                                <li>Engineering ROS2-based pipelines that combine control theory signals with adaptive
+                                    machine learning for real-time edge deployment.</li>
+                                <li>Optimizing computer vision architectures (SLAM, LiDAR, depth-camera fusion) for 12+
+                                    autonomous tasks including fall detection, navigation, and pick-and-place.</li>
+                            </ul>
+                            <div class="institution">
+                                <strong>North South University, Bangladesh</strong>
+                                <p>Research Assistant — Supervisor: Dr. Shahnewaz Siddique | <em>Funded by CTRG Research
+                                        Grant</em></p>
+                            </div>
                         </div>
-                        <p>Integrating two modalities: stroke facial scan and voice for predicting stroke. This included data alignment across modalities and attention-based fusion strategies.</p>
-                        <div class="institution">
-                            <strong>BRAC University</strong>
-                            <p>Research Assistant - Dr. Aniqua Nusrat Zereen & Sadman Sakib Alif</p>
+
+                        <!-- Kamaleswaran Lab -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Medical Foundation Models (Kamaleswaran Lab)</h3>
+                                <span class="duration">August 2025 - Present</span>
+                            </div>
+                            <p>Collaborating on advanced multimodal physiological learning and medical time-series
+                                models:
+                            </p>
+                            <ul style="padding-left: 1.2rem; line-height: 1.6; margin: 10px 0; color: var(--darkgray);">
+                                <li>Authored key sections of a comprehensive review on Foundation Model Architectures
+                                    for
+                                    event sequence data (Transformers, State Space Models, Diffusion Models).</li>
+                                <li>Revised and restructured literature on medical time-series waveforms in response to
+                                    journal reviewers.</li>
+                                <li>Designed main conceptual figures illustrating end-to-end foundation model pipelines
+                                    and
+                                    architectural comparison frameworks.</li>
+                            </ul>
+                            <div class="institution">
+                                <strong>Duke University, USA (Remote)</strong>
+                                <p>Research Internship — Supervisor: Dr. Rishi Kamaleswaran | <em>Funded by NIH Grant
+                                        GM139967</em></p>
+                            </div>
+                        </div>
+
+                        <!-- Mahidol University -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Multimodal Biomarker Fusion for Stroke Detection</h3>
+                                <span class="duration">Jan 2025 - Aug 2025</span>
+                            </div>
+                            <p>Developed a multimodal deep learning framework fusing facial biomarkers (computer vision)
+                                and
+                                voice biomarkers for stroke prediction:</p>
+                            <ul style="padding-left: 1.2rem; line-height: 1.6; margin: 10px 0; color: var(--darkgray);">
+                                <li>Proposed an epoch-wise stochastic modality masking strategy to handle missing or
+                                    noisy
+                                    modal inputs.</li>
+                                <li>Achieved 97% classification accuracy, outperforming several state-of-the-art
+                                    baselines.
+                                </li>
+                            </ul>
+                            <div class="institution">
+                                <strong>Mahidol University, Thailand (Remote)</strong>
+                                <p>Research Assistant — Supervisor: Dr. Aniqua Nusrat Zereen</p>
+                            </div>
+                        </div>
+
+                        <!-- BRAC University -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>DownLens: Pediatric Down Syndrome Detection</h3>
+                                <span class="duration">May 2024 - June 2025</span>
+                            </div>
+                            <p>Led a study on pediatric Down syndrome detection using deep learning on facial images:
+                            </p>
+                            <ul style="padding-left: 1.2rem; line-height: 1.6; margin: 10px 0; color: var(--darkgray);">
+                                <li>Proposed SEEFRA-KD, a lightweight, privacy-preserving federated learning and
+                                    knowledge
+                                    distillation framework.</li>
+                                <li>Achieved 98% accuracy on edge deployment without centralizing sensitive patient
+                                    data.
+                                </li>
+                            </ul>
+                            <div class="institution">
+                                <strong>BRAC University, Bangladesh</strong>
+                                <p>Research Assistant — Supervisor: Sadman Sakib Alif</p>
+                            </div>
+                        </div>
+
+                        <!-- Cephalexin Crystallization Project -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Impurity Detection & Segmentation in Cephalexin Crystallization</h3>
+                                <span class="duration">Research Project</span>
+                            </div>
+                            <p>Developed an automated computer vision framework for real-time impurity detection during
+                                the crystallization of Cephalexin, replacing conventional manual inspection with deep
+                                learning-based image understanding.</p>
+                            <ul style="padding-left: 1.2rem; line-height: 1.6; margin: 10px 0; color: var(--darkgray);">
+                                <li><strong>Classification & Segmentation:</strong> Developed CNN-based classification
+                                    (DenseNet121, ResNet50, InceptionV3, VGG16) and autoencoder segmentation for PGME
+                                    impurity detection.</li>
+
+                                <li><strong>Optimization:</strong> Applied Knowledge Distillation and Grad-CAM/CAM for
+                                    lightweight deployment and model interpretability.</li>
+
+                                <li><strong>Dataset:</strong> Processed 14,314 in-situ crystallization images with image
+                                    enhancement and data augmentation.</li>
+
+                                <li><strong>Impact:</strong> Automated impurity detection for pharmaceutical quality
+                                    control using computer vision.</li>
+                            </ul>
+                            <div class="institution">
+                                <strong>North South University</strong>
+                                <p>Course Project</p>
+                            </div>
+                        </div>
+
+                        <!-- CSE445 Project -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Oral Drug-consumption Predictor</h3>
+                                <span class="duration">CSE445 - ML Course Project</span>
+                            </div>
+                            <p>Used machine learning techniques to predict oral drug-consumption rates and evaluate
+                                drug-likeness based on molecular descriptors.</p>
+                            <div class="institution">
+                                <strong>North South University</strong>
+                                <p>Course Project</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <h3>Multimodal Forecasting</h3>
-                            <span class="duration">August 2025 - Present</span>
-                        </div>
-                        <p>Ongoing collaboration on advanced multimodal forecasting methods.</p>
-                        <div class="institution">
-                            <strong>Kamaleswaran Lab, Duke University, USA</strong>
-                            <p>Research Assistant (Remote) - Dr. Rishikesan Kamaleswaran</p>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <h3>Machine Learning Approaches to Predict Oral Drug-consumption</h3>
-                            <span class="duration">CSE445-MLE</span>
-                        </div>
-                        <p>In a separate biomedical AI project, I have used machine learning techniques to predict oral drug-consumption rates and evaluate drug-likeness based on molecular descriptors.</p>
-                        <div class="institution">
-                            <strong>North South University</strong>
-                            <p>Course Project</p>
+                </div>
+
+                <!-- NEW SECTION: TEACHING EXPERIENCE -->
+                <div id="sec-teaching" class="tab-section">
+                    <h1 class="section-heading"><span>Teaching</span> Experience</h1>
+                    <div class="experience-wrapper">
+                        <div class="experience-card other-experience">
+                            <div class="experience-header">
+                                <h3>Teaching Assistant</h3>
+                                <span class="duration">June 2024 - Jan 2026</span>
+                            </div>
+                            <p>Assisted undergraduate student mentoring, grading, and academic evaluations for Digital
+                                Logic
+                                Design (CSE231) and Operating System Design (CSE323) courses.</p>
+                            <div class="institution">
+                                <strong>North South University</strong>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="experience-card other-experience">
-                        <div class="experience-header">
-                            <h3>Undergraduate Teaching Assistant</h3>
-                            <span class="duration">June 2024 - Present</span>
+                </div>
+
+                <!-- NEW SECTION: PROFESSIONAL DEVELOPMENT -->
+                <div id="sec-profdev" class="tab-section">
+                    <h1 class="section-heading"><span>Professional</span> Development</h1>
+                    <div class="experience-wrapper">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Nippon AI Dojo</h3>
+                                <span class="duration">CHOWA GIKEN (METI, Japan)</span>
+                            </div>
+                            <p>Selected as one of the Top 10 participants from North South University (out of 2,500+
+                                applicants) for competitive AI research training. Applied computer vision and 3D point
+                                cloud
+                                processing (.las data) for stockpile volume estimation using Direct ensemble
+                                segmentation
+                                and Poisson reconstruction tracks.</p>
                         </div>
-                        <p>Digital Logic Design (CSE231) & Operating System Design (CSE323)</p>
-                        <div class="institution">
-                            <strong>North South University</strong>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>GCI World 2026</h3>
+                                <span class="duration">Matsuo-Iwasawa Lab, Univ. of Tokyo</span>
+                            </div>
+                            <p>Studied Python, machine learning, SQL, and data-driven analytics through an international
+                                curriculum hosted by the Matsuo-Iwasawa Laboratory, The University of Tokyo, Japan.</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>ITEE Training Program</h3>
+                                <span class="duration">BD-ITEC Bangladesh</span>
+                            </div>
+                            <p>Participated in training focused on software engineering, IT fundamentals, and
+                                Japanese-standard IT practices (Information Technology Engineers Examination).</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Footer included directly -->
         <footer>
-            
+
             <a href="index.html"><img class="footer-logo" src="./images/logo.svg" alt=""></a>
-                        
-            
+
+
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/yasin-rahat-6130b5200/"><img src="./images/linkedin.svg" alt=""></a>
+                <a href="https://www.linkedin.com/in/yasin-rahat-6130b5200/"><img src="./images/linkedin.svg"
+                        alt=""></a>
                 <a href="https://www.facebook.com/yasin.rahat.39"><img src="./images/facebook.svg" alt=""></a>
                 <a href="https://github.com/yasinarafat03"> <img src="./images/github.svg" alt=""></a>
                 <a href="https://wa.me/+8801875493020"> <img src="./images/whatsapp.svg" alt=""></a>
@@ -141,10 +461,11 @@
             </div>
         </footer>
     </div>
-    
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
+
 </html>
