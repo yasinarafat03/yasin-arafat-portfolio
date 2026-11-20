@@ -76,12 +76,78 @@ document.addEventListener("DOMContentLoaded", () => {
         
         <section id="projects" class="projects reveal">
             <div class="container">
-                <h1 class="section-heading"><span>My</span> Projects</h1>
-                <p>Showcasing my technical skills through various projects</p>
+                <h1 class="section-heading"><span>Featured</span> Projects</h1>
+                <p>Highlighting research innovations and engineering projects across Medical AI, Space Systems, Embodied Robotics, and Computer Science</p>
                 <div class="card-wrapper">
+                    <!-- MM-CAST -->
                     <div class="card">
                         <div class="overlay">
-                            <span>AI & Automation</span>
+                            <span>Medical AI</span>
+                            <a href="project-detail.html?id=mm-cast">Duke University</a>
+                        </div>
+                        <img src="./images/duke.png" alt="MM-CAST Duke University" style="object-fit: contain; padding: 20px; background: #fff;">
+                        <div class="project-info">
+                            <h3>MM-CAST: Multimodal Sepsis-Associated ARF Phenotyping</h3>
+                            <p>Outcome-blind, severity-aware deep generative framework fusing 24-hr pre-ventilation EMR trajectories and chest X-ray concepts via temporal Transformers, PoE, distance-correlation decoupling, and causal AIPW.</p>
+                        </div>
+                    </div>
+
+                    <!-- SPARRSO CubeSat OBC -->
+                    <div class="card">
+                        <div class="overlay">
+                            <span>Space Systems &amp; AI</span>
+                            <a href="project-detail.html?id=cubesat-obc">SPARRSO &amp; APSCO</a>
+                        </div>
+                        <img src="./images/alu.jpg" alt="CubeSat Fault-Tolerant OBC">
+                        <div class="project-info">
+                            <h3>Fault-Tolerant AI-Enabled OBC for CubeSat &amp; HIL Validation</h3>
+                            <p>Developing fault-tolerant satellite flight software (NASA F Prime, FreeRTOS, NASA NOS3) and real-time Hardware-in-the-Loop testbenches for autonomous LEO CubeSat operations.</p>
+                        </div>
+                    </div>
+
+                    <!-- BIT Robot -->
+                    <div class="card">
+                        <div class="overlay">
+                            <span>Embodied AI &amp; Robotics</span>
+                            <a href="project-detail.html?id=bit-robot">NIRO Lab, NSU</a>
+                        </div>
+                        <img src="./images/niro.jpg" alt="BIT Robot NIRO Lab" style="object-fit: contain; padding: 20px; background: #fff;">
+                        <div class="project-info">
+                            <h3>BIT: Embodied AI Physical Robot for Assistive Healthcare</h3>
+                            <p>Embodied physical assistant integrating LLM/VLM/VLA models with depth camera and LiDAR SLAM; PointNet 3D point cloud segmentation (0.875 mIoU) for domestic patient safety.</p>
+                        </div>
+                    </div>
+
+                    <!-- Multimodal Stroke Detection -->
+                    <div class="card">
+                        <div class="overlay">
+                            <span>Medical Vision &amp; Audio</span>
+                            <a href="project-detail.html?id=stroke-detection">Elsevier Array (Q1)</a>
+                        </div>
+                        <img src="./images/mahidol.png" alt="Stroke Detection Mahidol University" style="object-fit: contain; padding: 20px; background: #fff;">
+                        <div class="project-info">
+                            <h3>Multimodal Biomarker Fusion for Non-Invasive Stroke Screening</h3>
+                            <p>Deep learning framework fusing facial visual biomarkers and voice acoustic biomarkers (MFCC) using stochastic modality masking with hybrid CNN--GRU (95.33% accuracy).</p>
+                        </div>
+                    </div>
+
+                    <!-- FedACA Down Syndrome -->
+                    <div class="card">
+                        <div class="overlay">
+                            <span>Federated Learning</span>
+                            <a href="project-detail.html?id=fedaca">Medical Computer Vision</a>
+                        </div>
+                        <img src="./images/brac(1).jpg" alt="FedACA BRACU NSU" style="object-fit: contain; padding: 20px; background: #fff;">
+                        <div class="project-info">
+                            <h3>FedACA: Privacy-Preserving Pediatric Down Syndrome Detection</h3>
+                            <p>Anatomically-guided federated learning with landmark attention and consensus aggregation, achieving 98% accuracy on 2D facial photography without centralizing sensitive patient data.</p>
+                        </div>
+                    </div>
+
+                    <!-- AI Agent -->
+                    <div class="card">
+                        <div class="overlay">
+                            <span>AI &amp; Automation</span>
                             <a href="project-detail.html?id=ai-agent">Machine Learning</a>
                         </div>
                         <img src="./images/ai-agent.png" alt="Offline Multimodal AI Agent">
@@ -90,6 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p>Developed a fully offline, privacy-preserving multimodal AI agent capable of autonomous email parsing, location geofencing, gallery perception, and automated Telegram alerts using local LLMs/VLMs.</p>
                         </div>
                     </div>
+
+                    <!-- ALU -->
                     <div class="card">
                         <div class="overlay">
                             <span>Hardware Project</span>
@@ -101,6 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p>Built a functional 8-bit Arithmetic Logic Unit, showcasing proficiency in Computer Organization and Architecture.</p>
                         </div>
                     </div>
+
+                    <!-- CPUSH -->
                     <div class="card">
                         <div class="overlay">
                             <span>Mobile App</span>
@@ -108,10 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <img src="./images/cpu.jpg" alt="CPUSH App">
                         <div class="project-info">
-                            <h3>CPUSH</h3>
-                            <p>CPU scheduling and deadlock detection simulator mobile app.</p>
+                            <h3>CPUSH: CPU Scheduling Simulator</h3>
+                            <p>CPU scheduling and deadlock detection simulator mobile app developed for systems education.</p>
                         </div>
                     </div>
+
+                    <!-- E-commerce -->
                     <div class="card">
                         <div class="overlay">
                             <span>Web Development</span>
@@ -119,73 +191,30 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <img src="./images/e-commerce.jpg" alt="E-commerce Website">
                         <div class="project-info">
-                            <h3>E-commerce Website for Technology-Related Products</h3>
+                            <h3>E-commerce Website for Technology Products</h3>
                             <p>Developed a comprehensive e-commerce platform focused on technology products, enhancing web development and database management skills.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="overlay">
-                            <span>Web Application</span>
-                            <a href="project-detail.html?id=attendance">Database Systems</a>
-                        </div>
-                        <img src="./images/attendence.jpg" alt="Attendance System">
-                        <div class="project-info">
-                            <h3>Online Attendance Taking System</h3>
-                            <p>Developed a system to streamline and automate attendance tracking.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="overlay">
-                            <span>Web Application</span>
-                            <a href="project-detail.html?id=surveillance">Security</a>
-                        </div>
-                        <img src="./images/survialence.jpg" alt="Surveillance System">
-                        <div class="project-info">
-                            <h3>Online Class Surveillance System</h3>
-                            <p>Created a system to monitor and ensure the integrity of online classes.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="overlay">
-                            <span>Hardware Project</span>
-                            <a href="project-detail.html?id=seven-segment">Digital Logic</a>
-                        </div>
-                        <img src="./images/seven.jpg" alt="Seven Segment Display">
-                        <div class="project-info">
-                            <h3>Seven Segment Display with Sequential Circuit</h3>
-                            <p>Designed and implemented a display system using sequential circuits.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="overlay">
-                            <span>IoT Project</span>
-                            <a href="project-detail.html?id=smoke-detector">Embedded Systems</a>
-                        </div>
-                        <img src="./images/smoke.jpg" alt="Smoke Detector">
-                        <div class="project-info">
-                            <h3>Smoke Detector</h3>
-                            <p>Engineered a reliable smoke detection system for safety applications.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Footer included directly -->
         <footer>
-            
+
             <a href="index.html"><img class="footer-logo" src="./images/logo.svg" alt=""></a>
-                        
-            
+
+
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/yasin-rahat-6130b5200/"><img src="./images/linkedin.svg" alt=""></a>
+                <a href="https://www.linkedin.com/in/md-yasin-arafat-rahat-6130b5200/"><img src="./images/linkedin.svg"
+                        alt=""></a>
                 <a href="https://www.facebook.com/yasin.rahat.39"><img src="./images/facebook.svg" alt=""></a>
                 <a href="https://github.com/yasinarafat03"> <img src="./images/github.svg" alt=""></a>
                 <a href="https://wa.me/+8801875493020"> <img src="./images/whatsapp.svg" alt=""></a>
                 <a href="https://www.instagram.com/yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             </div>
             <div class="copyright">
-                Copyright 2025 © Md Yasin Arafat
+                Copyright 2026 © Md Yasin Arafat
             </div>
         </footer>
     </div>

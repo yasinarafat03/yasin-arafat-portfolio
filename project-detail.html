@@ -175,14 +175,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         
             
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/yasin-rahat-6130b5200/"><img src="./images/linkedin.svg" alt=""></a>
+                <a href="https://www.linkedin.com/in/md-yasin-arafat-rahat-6130b5200/"><img src="./images/linkedin.svg" alt=""></a>
                 <a href="https://www.facebook.com/yasin.rahat.39"><img src="./images/facebook.svg" alt=""></a>
                 <a href="https://github.com/yasinarafat03"> <img src="./images/github.svg" alt=""></a>
                 <a href="https://wa.me/+8801875493020"> <img src="./images/whatsapp.svg" alt=""></a>
                 <a href="https://www.instagram.com/yasin_arafat_rahat/"> <img src="./images/instagram.svg" alt=""></a>
             </div>
             <div class="copyright">
-                Copyright 2025 © Md Yasin Arafat
+                Copyright 2026 © Md Yasin Arafat
             </div>
         </footer>
     </div>
@@ -198,6 +198,117 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Project data
         const projects = {
+            'mm-cast': {
+                title: 'MM-CAST: Multimodal Sepsis-Associated ARF Phenotyping',
+                category: 'Medical AI & Generative Modeling',
+                tech: 'Transformers, PoE, VAE, Causal AIPW, Python',
+                date: '2026 - Present',
+                image: './images/duke.png',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p><strong>MM-CAST</strong> (<em>MultiModal Clinical Assessment, Stratification & Trajectory Analysis</em>) is an outcome-blind, severity-aware multimodal phenotyping framework designed for sepsis-associated acute respiratory failure (ARF) in adult ICU patients prior to invasive mechanical ventilation.</p>
+                    <p>Conducting under the Kamaleswaran Lab at <strong>Duke University School of Medicine</strong>, the framework addresses the critical clinical challenge that patients with identical baseline organ failure scores (SOFA) often exhibit divergent pathophysiological mechanisms requiring personalized therapeutic intervention.</p>
+                    
+                    <h2>Key Methodological Innovations</h2>
+                    <ul>
+                        <li><strong>Multimodal Clinical Representation:</strong> Synthesizes 24-hour pre-ventilation longitudinal EMR physiological trajectories (vital signs, gas-exchange $PaO_2/FiO_2$, lab values) using temporal Transformers, alongside chest X-ray radiology report text and 14 structured CheXbert concepts.</li>
+                        <li><strong>Shared-Private Generative Latent Space:</strong> Formulates a deep generative model with separate latent factors: shared mechanism ($z_m$), baseline severity ($z_v$), EMR-private ($z_E$), and radiology-private ($z_R$) representations via Product-of-Experts (PoE).</li>
+                        <li><strong>Severity Decoupling:</strong> Implements a distance-correlation penalty ($\text{dCor}^2(z_m, s)$) to mathematically prevent the mechanism representation from collapsing into a mere proxy for baseline SOFA severity, certified by held-out gradient-boosting probes ($R^2 \le 0.10$).</li>
+                        <li><strong>Calibrated Cross-Modal Discordance:</strong> Defines a predictive-surprise estimand ($S^{R|E}$) standardized against a matched-null donor permutation ($\tilde{D}$) to identify true physiological-radiographic mismatch (e.g., severe hypoxemia with relatively clear lungs).</li>
+                        <li><strong>Causal Target-Trial Emulation:</strong> Evaluates phenotype-conditional treatment-effect heterogeneity (such as corticosteroid initiation) using cross-fitted Augmented Inverse Probability Weighting (AIPW) under rigorous time-zero alignment.</li>
+                    </ul>
+                    
+                    <h2>Institutional Backing</h2>
+                    <p>Conducted at the Kamaleswaran Lab, Duke University School of Medicine, supported by US NIH Grant GM139967.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'cubesat-obc': {
+                title: 'AI-Enabled Fault-Tolerant On-Board Computer (OBC) for CubeSat & HIL Validation',
+                category: 'Space Systems & Embedded AI',
+                tech: 'NASA F Prime, FreeRTOS, NASA NOS3, C/C++, Python',
+                date: '2026 - 2027',
+                image: './images/alu.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>Awarded a competitive national research fellowship by the <strong>Bangladesh Space Research and Remote Sensing Organization (SPARRSO)</strong> for the FY 2026–27 research project: <em>"Design, Development, and Hardware-in-the-Loop (HIL) Validation of an AI-enabled Fault-Tolerant On-Board Computer (OBC) system for CubeSat"</em>.</p>
+                    <p>This project builds on the BD-NSU AI SAT initiative in collaboration with SPARRSO and the Asia-Pacific Space Cooperation Organization (APSCO) to develop autonomous on-orbit detection and fault-tolerant computing for Low Earth Orbit (LEO) small satellites.</p>
+                    
+                    <h2>Key Engineering Highlights</h2>
+                    <ul>
+                        <li><strong>Dual-Processor Fault-Tolerant Architecture:</strong> Architected a robust OBC system decoupling deterministic mission-critical telemetry, telecommand, and housekeeping routines from high-power embedded AI inference pipelines.</li>
+                        <li><strong>Spacecraft Flight Software:</strong> Developing modular flight components using <strong>NASA F Prime (F´) v4.2.2</strong> and <strong>FreeRTOS</strong> for multi-tasking, memory protection, and deterministic command execution.</li>
+                        <li><strong>Hardware-in-the-Loop (HIL) Validation:</strong> Designing physical simulation testbenches integrating <strong>NASA NOS3 (Operational Simulator for Small Satellites)</strong> with target microcontrollers over UART, SPI, and CAN interfaces to evaluate fault detection, isolation, and recovery (FDIR) algorithms under simulated single-event upsets (SEUs).</li>
+                    </ul>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'bit-robot': {
+                title: 'BIT (Butler Intelligent Toolkit): Embodied Assistive Robot',
+                category: 'Embodied AI & Robotics',
+                tech: 'ROS2, LLM/VLM/VLA, LiDAR & Depth SLAM, PointNet, PyTorch',
+                date: '2026 - Present',
+                image: './images/niro.jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p><strong>BIT (Butler Intelligent Toolkit)</strong> is an embodied AI robotic assistant engineered at the NSU Robotics Intelligence Lab (NIRO Lab) under the supervision of Dr. Shahnewaz Siddique. Designed for domestic home-care and decentralized patient monitoring, BIT translates natural language commands into physical autonomous actions.</p>
+                    
+                    <h2>Technical Innovations</h2>
+                    <ul>
+                        <li><strong>Embodied Language-Action Grounding:</strong> Fuses Large Language Models (LLMs), Vision-Language Models (VLMs), and Vision-Language-Action (VLA) models to enable physical task reasoning, object localization, and contextual decision-making.</li>
+                        <li><strong>Dense 3D Perception & SLAM:</strong> Integrates Intel RealSense depth cameras with 2D/3D LiDAR sensor fusion, delivering real-time SLAM and patient-safety monitoring such as automated fall detection.</li>
+                        <li><strong>PointNet 3D Point-Cloud Segmentation:</strong> Developed and benchmarked a 3D point cloud semantic segmentation pipeline, reaching <strong>0.875 mIoU</strong> for fine-grained environmental understanding.</li>
+                    </ul>
+                    
+                    <h2>Awards & Recognition</h2>
+                    <p>Selected as one of the <strong>28 Featured Innovations across Bangladesh</strong> at the BEAR Summit 2026 (Silicon River / BSIA) and named among the <strong>Top 50 Innovations</strong> by the Ministry of Science and Technology of Bangladesh at the Bangladesh Innovation Fair 2026.</p>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
+            'stroke-detection': {
+                title: 'Multimodal Fusion of Visual and Auditory Biomarkers for Stroke Detection',
+                category: 'Medical Computer Vision & Audio',
+                tech: 'CNN--GRU, Stochastic Masking, XAI, PyTorch, Librosa',
+                date: '2025 - 2026',
+                image: './images/mahidol.png',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>Developed an interpretable multimodal deep learning framework fusing facial visual biomarkers (computer vision) and voice acoustic biomarkers (speech MFCC) for non-invasive, rapid stroke screening.</p>
+                    <p>Published in <strong>Elsevier Array</strong> (Vol. 30, Article 100787; <strong>Impact Factor: 5.3</strong>, SJR Q1, Scopus Indexed).</p>
+                    
+                    <h2>Key Contributions</h2>
+                    <ul>
+                        <li><strong>Stochastic Modality Masking:</strong> Formulated an epoch-wise stochastic masking mechanism allowing training on unpaired, heterogeneous clinical datasets while providing robustness against missing or degraded inputs at inference.</li>
+                        <li><strong>Hybrid Architecture:</strong> Designed a unified CNN--GRU network incorporating Explainable AI (XAI) feature selection for facial action units and vocal articulatory cues.</li>
+                        <li><strong>Diagnostic Accuracy:</strong> Reached <strong>95.33% classification accuracy</strong>, outperforming unimodal and state-of-the-art multimodal baselines.</li>
+                    </ul>
+                `,
+                demoLink: 'https://doi.org/10.1016/j.array.2026.100787',
+                codeLink: '#'
+            },
+            'fedaca': {
+                title: 'FedACA: Anatomically-Guided Privacy-Preserving Pediatric AI',
+                category: 'Federated Learning & Healthcare CV',
+                tech: 'Federated Learning, Landmark Attention, Knowledge Distillation',
+                date: '2024 - 2026',
+                image: './images/brac(1).jpg',
+                description: `
+                    <h2>Project Overview</h2>
+                    <p>Led the DownLens research study proposing <strong>FedACA</strong> and <strong>SEEFRA-KD</strong> for pediatric Down syndrome detection from 2D facial images using deep edge intelligence and federated learning.</p>
+                    
+                    <h2>Key Highlights</h2>
+                    <ul>
+                        <li><strong>Anatomical Landmark Attention:</strong> Integrated facial landmark tracking with attention mechanisms to focus on clinically relevant dysmorphic craniofacial features.</li>
+                        <li><strong>Privacy-Preserving Consensus Aggregation:</strong> Engineered federated model aggregation that mitigates client drift across heterogeneous clinical centers without centralizing private pediatric patient data.</li>
+                        <li><strong>Lightweight Edge Deployment:</strong> Applied knowledge distillation and quantization, reaching <strong>98% test accuracy</strong> on resource-constrained devices.</li>
+                    </ul>
+                `,
+                demoLink: '#',
+                codeLink: '#'
+            },
             'ai-agent': {
                 title: 'Offline Multimodal AI Agent for Autonomous Personal Assistance',
                 category: 'AI & Automation',
